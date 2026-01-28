@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9e4b7;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- GLASS NAV --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(74, 8, 8, 0.85); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90px;
+    z-index: 1000;
+    border-bottom: 3px solid #d48c2c;
+}
+
+.nav-link {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after { width: 100%; }
+
+.logo-circle {
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border: 3px solid #FFD700;
+    border-radius: 50%;
+}
+
+/* --- HERO LAYER ENGINE --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-bg {
+    width: 100%;
+    display: block;
+}
+
+.floating-container {
+    position: absolute;
+    top: 15%; /* Moves the text up/down relative to the background */
+    width: 65%; /* Adjusts the size of the logo text */
+    z-index: 10;
+}
+
+.main-logo {
+    width: 100%;
+    /* Floating Animation */
+    animation: floatEffect 4s ease-in-out infinite;
+    /* Clean gold glow effect */
+    filter: drop-shadow(0 0 10px rgba(212, 140, 44, 0.4));
+    transition: filter 0.4s ease;
+}
+
+@keyframes floatEffect {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.main-logo:hover {
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.8));
+    cursor: pointer;
+}
+
+/* --- GENERAL IMAGES --- */
+.campaign-image {
+    width: 100%;
+    display: block;
+    height: auto;
+}

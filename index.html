@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makamasa Campaign</title>
+    <link rel="stylesheet" href="style.css">
+    <style> html { scroll-behavior: smooth; } </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#misyon" class="nav-link">Candidates</a>
+        <div class="logo-circle"></div> 
+        <a href="#gpoa" class="nav-link">GPOA</a>
+        <a href="#thread" class="nav-link">Thread</a>
+    </nav>
+
+    <main class="content-container">
+        <section id="home" class="hero-section">
+            <img src="HomeBG.png" alt="Background" class="hero-bg">
+            <div class="floating-container">
+                <img src="LogoText.png" alt="Makamasa Logo" class="main-logo">
+            </div>
+        </section>
+
+        <section id="misyon">
+            <img src="Home2.png" alt="Misyon" class="campaign-image">
+        </section>
+
+        <section id="bisyon">
+            <img src="Home3.png" alt="Bisyon" class="campaign-image">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Makamasa Campaign</p>
+    </footer>
+
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_config = function () {
+      this.page.url = window.location.href;  // Page URL
+      this.page.identifier = window.location.pathname; // Unique identifier
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://markk.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+
+</body>
+</html>
