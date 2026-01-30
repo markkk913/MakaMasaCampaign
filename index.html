@@ -5,54 +5,310 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makamasa Campaign</title>
     <link rel="stylesheet" href="style.css">
-    <style> html { scroll-behavior: smooth; } </style>
+    <style> 
+        html { scroll-behavior: smooth; } 
+
+        /* --- MOBILE RESPONSIVE FIXES --- */
+        @media (max-width: 768px) {
+            .navbar {
+                height: auto !important;
+                flex-direction: column !important;
+                padding: 15px 10px !important;
+                align-items: center !important;
+            }
+            .nav-logo {
+                position: relative !important;
+                left: auto !important;
+                top: auto !important;
+                height: 80px !important;
+                margin-bottom: 10px;
+            }
+            .nav-links {
+                margin: 0 !important;
+                width: 100%;
+                justify-content: center !important;
+                gap: 15px !important;
+                flex-wrap: wrap;
+            }
+            .nav-link { font-size: 0.8rem; }
+            #gpoa-intro {
+                height: 60vh !important;
+                min-height: 300px;
+            }
+            .gpoa-cover-img {
+                object-fit: contain !important;
+                width: 90% !important;
+                height: 90% !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#misyon" class="nav-link">Candidates</a>
-        <div class="logo-circle"></div> 
-        <a href="#gpoa" class="nav-link">GPOA</a>
-        <a href="#thread" class="nav-link">Thread</a>
+        <img src="LogoText.png" alt="Makamasa Logo" class="nav-logo">
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#candidates-section" class="nav-link">Candidates</a>
+            <a href="#gpoa-intro" class="nav-link">GPOA</a>
+            <a href="#kapwasakapwa" class="nav-link">Kapwa sa kapwa</a>
+        </div>
     </nav>
 
     <main class="content-container">
-        <section id="home" class="hero-section">
-            <img src="HomeBG.png" alt="Background" class="hero-bg">
-            <div class="floating-container">
-                <img src="LogoText.png" alt="Makamasa Logo" class="main-logo">
+        
+        <section id="home" class="stack-wrapper">
+            <img src="HomeBG.png" alt="Background" class="base-bg">
+            <canvas class="anim-layer"></canvas>
+            <div class="top-text-container">
+                <img src="LogoText.png" alt="Makamasa Logo" class="main-logo-float">
+                <img src="HomeText1.png" alt="Home Text" class="sub-text">
             </div>
         </section>
 
-        <section id="misyon">
-            <img src="Home2.png" alt="Misyon" class="campaign-image">
+        <section id="mission" class="stack-wrapper">
+            <img src="Home2.png" alt="Mission" class="base-bg">
+            <canvas class="anim-layer"></canvas>
+            <img src="HomeText2.png" alt="Mission Text" class="top-text-img">
         </section>
 
-        <section id="bisyon">
-            <img src="Home3.png" alt="Bisyon" class="campaign-image">
+        <section id="vision" class="stack-wrapper">
+            <img src="Home3.png" alt="Vision" class="base-bg">
+            <canvas class="anim-layer"></canvas>
+            <img src="HomeText3.png" alt="Vision Text" class="top-text-img">
         </section>
+
+        <section id="candidates-section" class="stack-wrapper">
+            <img src="candidate1.png" alt="candidate 1" class="base-bg">
+            <canvas class="anim-layer"></canvas>
+
+            <div class="hotspot-container">
+                <div class="hotspot" onclick="openModal('cred-joel.png')" 
+                     style="top: 26%; left: 27.3%; width: 13%; height: 23%;"></div>
+
+                <div class="hotspot" onclick="openModal('cred-belle.png')" 
+                     style="top: 26%; left: 43.2%; width: 13%; height: 23%;"></div>
+
+                <div class="hotspot" onclick="openModal('cred-megumi.png')" 
+                     style="top: 26%; left: 59.37%; width: 13%; height: 23%;"></div>
+
+                <div class="hotspot" onclick="openModal('cred-ysabella.png')" 
+                     style="top: 56%; left: 21%; width: 13%; height: 23%;"></div>
+
+                <div class="hotspot" onclick="openModal('cred-sophia.png')" 
+                     style="top: 56%; left: 38%; width: 13%; height: 23%;"></div>
+
+                <div class="hotspot" onclick="openModal('cred-carmela.png')" 
+                     style="top: 56%; left: 53.5%; width: 13%; height: 23%;"></div>
+
+                <div class="hotspot" onclick="openModal('cred-karl.png')" 
+                     style="top: 56%; left: 69.5%; width: 13%; height: 23%;"></div>
+            </div>
+        </section>
+
+        <section id="candidate2" class="stack-wrapper">
+            <img src="candidate2.png" alt="candidate 2" class="base-bg">
+            <canvas class="anim-layer"></canvas>
+        </section>
+
+        <section id="gpoa-intro">
+            <div class="intro-bg-gold"></div>
+            <img src="11.png" alt="GPOA Cover" class="gpoa-cover-img">
+            <div class="scroll-hint">SCROLL TO EXPLORE ▼</div>
+        </section>
+
+        <section id="gpoa-scroll-container">
+            <div class="sticky-window">
+                <div class="bg-layer transition-bg"></div>
+                <div class="bg-layer moving-grid"></div>
+                
+                <div class="shooting-stars-layer">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span>
+                </div>
+
+                <div class="dual-track-container" id="dual-track">
+                    <div class="track-row" id="track-top"></div>
+                    <div class="track-row" id="track-bottom"></div>
+                </div>
+
+                <div class="scroll-progress-bar">
+                    <div class="scroll-progress-fill" id="gpoa-progress"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kapwasakapwa" style="background-color: #f9e4b7; padding: 50px 10%;">
+            <h2 style="text-align: center; color: #4A0808; margin-bottom: 30px; font-family: 'Segoe UI', sans-serif;">Discussion</h2>
+            <div id="disqus_thread"></div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 Makamasa Campaign</p>
-    </footer>
+<footer style="font-size: 18px;">
+    © Makamasa campaign 2026 <br>
+      To whom it may concern, Truthfully yours, Website created by: <br>
+    © Mark Voltaire O. Quidem & Jayson R. Apuya 
+</footer>
 
-    <div id="disqus_thread"></div>
+
+    <div id="cred-modal" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="Candidate Credential">
+        </div>
+    </div>
+
     <script>
-    var disqus_config = function () {
-      this.page.url = window.location.href;  // Page URL
-      this.page.identifier = window.location.pathname; // Unique identifier
-    };
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = 'https://markk.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-    </script>
-    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+        // --- 1. MODAL FUNCTIONALITY ---
+        const modal = document.getElementById('cred-modal');
+        const modalImg = document.getElementById('modal-img');
 
+        function openModal(imageName) {
+            // Show the modal
+            modal.style.display = 'flex';
+            // Set the image source
+            modalImg.src = imageName; 
+            // Disable background scrolling
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            // Hide the modal
+            modal.style.display = 'none';
+            // Clear source
+            modalImg.src = '';
+            // Enable scrolling
+            document.body.style.overflow = 'auto'; 
+        }
+
+        // Close on ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") closeModal();
+        });
+
+
+        // --- 2. GPOA SCROLL LOGIC ---
+        const stickyContainer = document.getElementById('gpoa-scroll-container');
+        const dualTrack = document.getElementById('dual-track');
+        const progressBar = document.getElementById('gpoa-progress');
+        const topRow = document.getElementById('track-top');
+        const bottomRow = document.getElementById('track-bottom');
+
+        // Populate Images
+        for (let i = 12; i <= 41; i++) {
+            if (i === 34) continue; 
+            const div = document.createElement('div');
+            div.classList.add('gpoa-card');
+            const img = document.createElement('img');
+            img.src = `${i}.png`;
+            img.loading = "eager"; 
+            img.onload = updateScrollLayout;
+            div.appendChild(img);
+            if (Math.floor((i - 12) / 3) % 2 === 0) {
+                topRow.appendChild(div);
+            } else {
+                bottomRow.appendChild(div);
+            }
+        }
+
+        function updateScrollLayout() {
+            const lastTop = topRow.lastElementChild;
+            const lastBottom = bottomRow.lastElementChild;
+            if(!lastTop || !lastBottom) return;
+
+            const widthTop = lastTop.offsetLeft + lastTop.offsetWidth;
+            const widthBottom = lastBottom.offsetLeft + lastBottom.offsetWidth;
+            const actualTrackWidth = Math.max(widthTop, widthBottom);
+            
+            const viewportWidth = window.innerWidth;
+            const distToMove = actualTrackWidth - (viewportWidth * 0.4);
+            const scrollMultiplier = 0.5; 
+            const totalSectionHeight = (distToMove * scrollMultiplier) + window.innerHeight;
+
+            stickyContainer.style.height = totalSectionHeight + "px";
+            stickyContainer.dataset.totalDist = distToMove;
+        }
+
+        window.addEventListener('scroll', () => {
+            const offsetTop = stickyContainer.offsetTop;
+            const containerHeight = stickyContainer.offsetHeight;
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const scrollStart = offsetTop;
+            const scrollEnd = offsetTop + containerHeight - viewportHeight;
+            const totalDist = parseFloat(stickyContainer.dataset.totalDist || 0);
+
+            if (scrollY >= scrollStart && scrollY <= scrollEnd) {
+                const progress = (scrollY - scrollStart) / (scrollEnd - scrollStart);
+                const moveX = progress * totalDist;
+                dualTrack.style.transform = `translate3d(-${moveX}px, 0, 0)`;
+                progressBar.style.width = (progress * 100) + "%";
+            } 
+            else if (scrollY > scrollEnd) {
+                dualTrack.style.transform = `translate3d(-${totalDist}px, 0, 0)`;
+                progressBar.style.width = "100%";
+            }
+        });
+
+        window.addEventListener('load', updateScrollLayout);
+        window.addEventListener('resize', updateScrollLayout);
+        setTimeout(updateScrollLayout, 1500);
+
+        // --- 3. PARTICLE ANIMATION ---
+        const setupAnimation = () => {
+            const layers = document.querySelectorAll('.anim-layer');
+            layers.forEach(canvas => {
+                const ctx = canvas.getContext('2d');
+                let particles = [];
+                const particleCount = window.innerWidth < 768 ? 25 : 65;
+                const resize = () => {
+                    canvas.width = canvas.parentElement.offsetWidth;
+                    canvas.height = canvas.parentElement.offsetHeight;
+                };
+                window.addEventListener('resize', resize);
+                resize();
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * canvas.width;
+                        this.y = Math.random() * canvas.height;
+                        this.size = Math.random() * 3 + 1;
+                        this.speedX = (Math.random() - 0.5) * 0.7;
+                        this.speedY = (Math.random() - 0.5) * 0.7;
+                    }
+                    update() {
+                        this.x += this.speedX; this.y += this.speedY;
+                        if (this.x > canvas.width) this.x = 0; else if (this.x < 0) this.x = canvas.width;
+                        if (this.y > canvas.height) this.y = 0; else if (this.y < 0) this.y = canvas.height;
+                    }
+                    draw() {
+                        ctx.fillStyle = "rgba(255, 215, 0, 0.4)";
+                        ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                    }
+                }
+                for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    requestAnimationFrame(animate);
+                }
+                animate();
+            });
+        };
+        window.addEventListener('load', setupAnimation);
+
+        // --- 4. DISQUS CONFIG ---
+        var disqus_config = function () {
+            this.page.url = window.location.href;  
+            this.page.identifier = document.title; 
+        };
+        (function() { 
+            var d = document, s = d.createElement('script');
+            s.src = 'https://markk.disqus.com/embed.js'; 
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
 </body>
 </html>
