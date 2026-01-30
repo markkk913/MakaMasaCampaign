@@ -83,33 +83,67 @@
             <canvas class="anim-layer"></canvas>
 
             <div class="hotspot-container">
-                <div class="hotspot" onclick="openModal('cred-joel.png')" 
+                <div class="hotspot" onclick="openModal('arellano1.png')" 
                      style="top: 26%; left: 27.3%; width: 13%; height: 23%;"></div>
 
-                <div class="hotspot" onclick="openModal('cred-belle.png')" 
+                <div class="hotspot" onclick="openModal('rebuta1.png')" 
                      style="top: 26%; left: 43.2%; width: 13%; height: 23%;"></div>
 
-                <div class="hotspot" onclick="openModal('cred-megumi.png')" 
+                <div class="hotspot" onclick="openModal('moriizumi1.png')" 
                      style="top: 26%; left: 59.37%; width: 13%; height: 23%;"></div>
 
-                <div class="hotspot" onclick="openModal('cred-ysabella.png')" 
+                <div class="hotspot" onclick="openModal('balana1.png')" 
                      style="top: 56%; left: 21%; width: 13%; height: 23%;"></div>
 
-                <div class="hotspot" onclick="openModal('cred-sophia.png')" 
+                <div class="hotspot" onclick="openModal('mondragon1.png')" 
                      style="top: 56%; left: 38%; width: 13%; height: 23%;"></div>
 
-                <div class="hotspot" onclick="openModal('cred-carmela.png')" 
+                <div class="hotspot" onclick="openModal('ignacio1.png')" 
                      style="top: 56%; left: 53.5%; width: 13%; height: 23%;"></div>
 
-                <div class="hotspot" onclick="openModal('cred-karl.png')" 
+                <div class="hotspot" onclick="openModal('abner1.png')" 
                      style="top: 56%; left: 69.5%; width: 13%; height: 23%;"></div>
             </div>
         </section>
 
-        <section id="candidate2" class="stack-wrapper">
-            <img src="candidate2.png" alt="candidate 2" class="base-bg">
-            <canvas class="anim-layer"></canvas>
-        </section>
+<section id="candidates-section-page2" class="stack-wrapper">
+    <img src="candidate2.png" alt="candidate 2" class="base-bg">
+    <canvas class="anim-layer"></canvas>
+
+    <div class="hotspot-container">
+        <!-- First row (5 elements) -->
+        <div class="hotspot" onclick="openModal('tanquino1.png')" 
+             style="top: 25%; left: 8%; width: 12%; height: 20%;"></div>
+
+        <div class="hotspot" onclick="openModal('victorio1.png')" 
+             style="top: 25%; left: 27%; width: 12%; height: 20%;"></div>
+
+        <div class="hotspot" onclick="openModal('paragas1.png')" 
+             style="top: 25%; left: 45%; width: 12%; height: 20%;"></div>
+
+        <div class="hotspot" onclick="openModal('malalri1.png')" 
+             style="top: 25%; left: 62%; width: 12%; height: 20%;"></div>
+
+        <div class="hotspot" onclick="openModal('vallente1.png')" 
+             style="top: 25%; left: 80%; width: 12%; height: 20%;"></div>
+
+        <!-- Second row (5 elements) -->
+        <div class="hotspot" onclick="openModal('arguelles1.png')" 
+             style="top: 62%; left: 8%; width: 12%; height: 20%;"></div>
+
+        <div class="hotspot" onclick="openModal('benedicto1.png')" 
+             style="top: 62%; left: 27%; width: 12%; height: 20%;"></div>
+
+        <div class="hotspot" onclick="openModal('chua1.png')" 
+             style="top: 62%; left: 46%; width: 12%; height: 20%;"></div>
+
+        <div class="hotspot" onclick="openModal('rufino1.png')" 
+             style="top: 62%; left: 63%; width: 12%; height: 20%;"></div>
+
+        <div class="hotspot" onclick="openModal('tesorero1.png')" 
+             style="top: 62%; left: 80%; width: 12%; height: 20%;"></div>
+    </div>
+</section>
 
         <section id="gpoa-intro">
             <div class="intro-bg-gold"></div>
@@ -146,10 +180,12 @@
 
     </main>
 
-<footer style="font-size: 18px;">
-    © Makamasa campaign 2026 <br>
-      To whom it may concern, Truthfully yours, Website created by: <br>
-    © Mark Voltaire O. Quidem & Jayson R. Apuya 
+<footer style="font-size: 16px;">
+      To whom it may concern, Sincerely yours, <br>
+    © Mark Voltaire O. Quidem & Jayson R. Apuya <br>
+    © MakaMasa campaign 2026 🤘<br>
+    
+    
 </footer>
 
 
@@ -255,6 +291,7 @@
         window.addEventListener('load', updateScrollLayout);
         window.addEventListener('resize', updateScrollLayout);
         setTimeout(updateScrollLayout, 1500);
+        
 
         // --- 3. PARTICLE ANIMATION ---
         const setupAnimation = () => {
